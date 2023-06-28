@@ -6,7 +6,7 @@ from pprint import pprint               # Library for pretty-printing form detai
 from bs4 import BeautifulSoup as bs     # Library for HTML parsing.
 from urllib.parse import urljoin        # Library for constructing absolute URLs.
 
-os.system("cls")                      # Command clearing the Terminal
+os.system("cls")                        # Command clearing the Terminal
 
 def get_all_forms(url):                 # Function retrieves all HTML forms present on the target URL using the (requests) library, parses the content using the library (BeautifulSoup) and returns a list of form elements. Form elements are the various components used to collect input from users in grafical user interfaces (GUI) or web applications. These elements provide a way to interact with users and retrieve data such as text, numbers, selections and more.
     soup = bs(requests.get(url).content, "html.parser")
@@ -70,7 +70,7 @@ def scan_xss(url):                                                  # This funct
                 print(form_details)
                 break                                                       # The loop is broken using the 'break' statement, assuming that once an XSS vulnerability is detected, there is no need to continue checking other payloads or forms.
 
-if __name__ == "__main__":                                          # Promt the user to enter the target URL. Then the 'scan_xss(url)' function is called and the results are displayed.
+if __name__ == "__main__":                                                  # Promt the user to enter the target URL. Then the 'scan_xss(url)' function is called and the results are displayed.
     colorama.init()
     url = input("Enter the target URL: ")
     scan_xss(url)
